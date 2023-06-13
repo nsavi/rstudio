@@ -36,3 +36,14 @@ r_XZ_Y = (r_XZ - r_XY*r_YZ)/sqrt((1-r_XY^2)*(1-r_YZ^2))
 r_XZ_Y
 r_YZ_X = (r_YZ - r_XY*r_XZ)/sqrt((1-r_XY^2)*(1-r_XZ^2))
 r_YZ_X
+
+#Regression Equation Y on X
+X = c(23,27,28,28,29,30,31,33,35,36)
+Y = c(18,20,22,27,21,29,27,29,28,29)
+Regr = lm(Y~X)
+plot(X,Y,main = "X data vs. Y data",xlab = "x data",ylab = "y data",col = "red")
+abline(lm(Y~X))
+#Regression Equation X on Y
+Regr = lm(X ~ Y)
+plot(Y,X,main = "X data vs. Y data",xlab="y data",ylab="x data",col = "red")
+abline(lm(X~Y))
